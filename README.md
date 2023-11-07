@@ -5,6 +5,6 @@ This project aims to be a simple item's storage
 
 # Front End
 
-Neste projeto utilizaremos para o front-end uma dashboard integrada, oferecida pelo ![Sb Admin 2](https://startbootstrap.com/theme/sb-admin-2)
+Neste projeto utilizaremos para o front-end uma dashboard integrada, oferecida pelo <a href="https://startbootstrap.com/theme/sb-admin-2">Sb Admin 2</a>
 
 
