@@ -1,39 +1,32 @@
-  <?php
-    class DatabaseHandler
-    {
+<?php
 
-        public static function getConnection()
-        {
-            $env = self::loadEnvFile();
-            
-            $connection = new mysqli(
-                $env['host'],
-                $env['username'],
-                $env['password'],
-                $env['database']
-            );
+class DatabaseHandler {
 
-            if ($connection->connect_error) {
-                die("Erro: " . $connection->connect_error);
-            }
+    public static function getConnection() {
 
-            return $connection;
+        // $connection = new mysqli('localhost:3306', 'root', 'Urano&I11', 'warehouse');
+
+        //Onde está o arquivo
+        $envPath = 'E:\PROJETOS\warehouse-php\env.ini';
+        //Interpreta o arquivo .ini
+        $env = parse_ini_file($envPath);
+
+        $connection = new mysqli($env['host'],
+     $env['username'], $env['password'],
+     $env['database']);
+
+        if($connection->connect_error) {
+            die("Erro: " . $connection->connect_error);
         }
 
-
-        public static function getResultFromQuery($sql) {
-            $connection = self::getConnection();
-            $result = $connection->query($sql);
-            $connection->close();
-            return $result; 
-        }
-
-        public static function loadEnvFile() {
-            //Onde está o arquivo
-            $envPath = 'env.ini';
-            var_dump($envPath);
-
-            //Interpreta o arquivo .ini
-            return parse_ini_file($envPath);
-        }
+        return $connection;
     }
+
+    public static function getResultFromQuery($sql) {
+        $connection = self::getConnection();
+        $result = $connection->query($sql);
+        $connection->close();
+        return $result;
+    }
+
+}
