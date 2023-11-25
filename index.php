@@ -1,20 +1,20 @@
-<?php 
+<?php
 
-require 'E:\PROJETOS\warehouse-php\src\config\DatabaseHandler.php';
+require_once(realpath(dirname(__FILE__, 1)) . '/src/config/config.php');
 
-require_once(dirname(__FILE__) . '\src\model\Product.php');
+$uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-$product = new Product(12,1, "asdaso", 1, "teste", "adsa", "asd", "asd", "as", "asd");
-
-$sql = 'select * from products';
-
-$result = DatabaseHandler::getResultFromQuery($sql);
-
-print_r($result);
-
-while($row = $result->fetch_assoc()) {
-    print_r($row);
-    echo '<br>';
+if ($uri === '/' || $uri === '' || $uri === '/index.php') {
+    $uri = '/DashBoardController.php';
 }
 
-// var_dump($product);
+if ($uri === '/product/create') {
+    $uri = '/ProductControllerCreate.php';
+}
+
+if ($uri === '/product') {
+    $uri = '/ProductController.php';
+}
+
+require_once(CONTROLLER_PATH . "{$uri}");
+
