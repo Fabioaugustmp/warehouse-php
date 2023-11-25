@@ -17,3 +17,4 @@ if ($uri === '/product') {
 }
 
 require_once(CONTROLLER_PATH . "{$uri}");
+
