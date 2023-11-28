@@ -44,6 +44,8 @@ if (count($_POST) === 0 && isset($_GET['update'])) {
 } elseif (isset($_GET['delete'])) {
     $product = findProduct($_GET['delete']);
     $product->delete();
+
+    addWarnMessage("Produto deletado com sucesso.");
     header('Location: /product');
     exit();
 }
