@@ -14,6 +14,10 @@ $result = DatabaseHandler::getResultFromQuery($sql);
         <a href="/product/create" class="d-none d-sm-inline-block btn btn-outline-primary shadow-sm"><i class="fas fa-plus"></i> Cadastrar Produto</a>
     </div>
 
+    <?php
+    include(TEMPLATE_PATH . '/messages.php');
+    ?>
+
     <div class="container-fluid">
         <div class="card-body">
             <div class="table-responsive">

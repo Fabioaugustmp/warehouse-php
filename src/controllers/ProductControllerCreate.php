@@ -11,23 +11,28 @@ if (count($_POST) === 0 && isset($_GET['update'])) {
     $userData = $product->getValues();
     $isUpdate = true;
 
-    addSuccessMessage('Produto atualizado com sucesso!');
 } elseif (count($_POST) > 0) {
     try {
         $productId = $_GET['update'];
-        $product = $productId != null ? findProduct($productId) : new Product($_POST);
+        $product = new Product($_POST);
+        
+        // Coloca o valor do produto recuperado.
+        $product->id = $productId;
 
         if ($product->id) {
             $isUpdate = true;
             //Autalizando o produto no banco de dados;
             $product->update();
-            addSuccessMessage('Produto atualizado com sucesso!');
+
+            addPrimaryMessage('Produto atualizado com sucesso!');
             header('Location: /product');
             exit();
         } else {
             // Inserindo o produto no banco de dados;        
             $product->insert();
             addSuccessMessage('Produto cadastrado com sucesso!');
+            header('Location: /product');
+            exit();
         }
 
         $_POST = [];
