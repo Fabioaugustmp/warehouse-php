@@ -18,3 +18,4 @@ class Product extends Model {
         return parent::insert();
     }
 }
+
