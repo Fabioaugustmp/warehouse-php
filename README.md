@@ -9,7 +9,7 @@ Este guia fornece instruções passo a passo sobre como configurar corretamente 
 
 ## 1. Localizar o Arquivo `httpd-vhosts.conf`
 
-Encontre o arquivo `httpd-vhosts.conf` dentro do diretório XAMPP ou MAMP. Normalmente, ele está localizado em `SEU-DISCO\xammp\apache\httpd-vhosts.conf`.
+Encontre o arquivo `httpd-vhosts.conf` dentro do diretório XAMPP ou MAMP. Normalmente, ele está localizado em `SEU-DISCO\xammp\apache\httpd-vhosts.conf` ou `SEU-DISCO\MAMP\bin\apache\conf\extra`.
 
 ## 2. Abrir e Configurar `httpd-vhosts.conf`
 
