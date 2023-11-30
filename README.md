@@ -57,6 +57,11 @@ RewriteRule . / [L]
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 ```
+
+## 6. Banco de Dados
+
+Configure o arquivo env.ini que está localizado na raiz do projeto, altere o nome do arquivo de env-develop.ini para env.ini e coloque as credenciais de banco de dados tais como usuário e senha. Este projeto utiliza o MySql como banco de dados
+
 ## Front End
 
 Neste projeto utilizaremos para o front-end uma dashboard integrada, oferecida pelo <a href="https://startbootstrap.com/theme/sb-admin-2">Sb Admin 2</a>
