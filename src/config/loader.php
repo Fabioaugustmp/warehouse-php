@@ -27,8 +27,6 @@ function loadTemplateView($viewName, $params = array())
             }
         }
     }
-
-    $user = $_SESSION['user'];
     
     require_once(TEMPLATE_PATH . "/header.php");
     require_once(TEMPLATE_PATH . "/sidebar.php");
